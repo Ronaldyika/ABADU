@@ -1,0 +1,35 @@
+{% extends 'base/base.html'%}
+{% block title %}customer Registration{% endblock %}
+
+{% block content %}
+<div class="container"><br><br>
+
+  <form>
+    <div class="form-group">
+      <label for="firstname">Firstname</label>
+      <input type="text" name="firstname" class="form-control" required="true" id="firstname" aria-describedby="firstname" placeholder="Enter firstname">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Lastname</label>
+      <input type="text" class="form-control" required="true" name="lastname" id="lastname" aria-describedby="lastname" placeholder="Enter lastname">
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" required="true" name="username" id="username" aria-describedby="username" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" name="email" class="form-control" required="true" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" class="form-control" required="true" id="password" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+      <label for="password">Confirm Password</label>
+      <input type="password" name="password1" class="form-control" required="true" id="password" placeholder="Enter password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

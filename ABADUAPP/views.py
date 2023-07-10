@@ -7,3 +7,14 @@ def index(request):
 
 def registercustomer(request):
     return render(request,'customer/register.html')
+
+
+def logincustomer(request):
+    return render(request,'customer/login.html')
+
+def registeradmin(request):
+    return render(request,'adminsite/register.html')
+
+def signinadmin(request):
+
+    return render(request,'adminsite/login.html')

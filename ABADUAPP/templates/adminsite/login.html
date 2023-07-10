@@ -9,12 +9,12 @@
     <div class="row">
       <div class="col-md-6 offset-md-3" style="background-color: rgba(0.3, 0.4, 0.3, 0.2); padding: 20px;">
         <marquee behavior="" direction="">
-            <h1 class="text-white">User Login</h1>
+            <h1 class="text-white">Admin Login</h1>
         </marquee>
         <form action="" method="post">
           <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
+            <label for="username" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
@@ -22,9 +22,6 @@
           </div>
           <button type="submit" class="btn btn-success text-center">Login</button>
         </form>
-        <div class="option text-center"><br>
-            <p>not yet a member!! <a href="{% url 'regcustomer' %}">Register</a></p>
-        </div>
       </div>
     </div>
   </div>

@@ -2,34 +2,49 @@
 {% block title %}customer Registration{% endblock %}
 
 {% block content %}
-<div class="container"><br><br>
+<br><br>
+<div class="container ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" style="background-color: rgba(0.2, 0.4, 0.2, 0.2); padding: 20px;">
+        <marquee behavior="" direction="">
+          <h1 class="text-white">User Registration</h1>
+        </marquee>
+        <form action="" method="post">
+          <div class="mb-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="mb-2">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username">
+          </div>
+          <div class="mb-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+          <div class="mb-2">
+            <label for="passwordConfirm" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+          </div>
+          <button type="submit" class="btn btn-success text-center">Register</button>
+        </form><br>
+        <p class="text-white">have an account alread? <a href="{% url 'login' %}" style="color: rgb(7, 12, 0);text-decoration: none;"><b>login</b></a></p>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div>
+          <h2 class="text-white">JOIN ABADU COMMUNITY TODAY</h2>
+          <div class="container">
+            <div class="row">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, debitis!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eveniet corporis blanditiis.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime eaque molestiae culpa quasi voluptatibus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
 
-  <form>
-    <div class="form-group">
-      <label for="firstname">Firstname</label>
-      <input type="text" name="firstname" class="form-control" required="true" id="firstname" aria-describedby="firstname" placeholder="Enter firstname">
-    </div>
-    <div class="form-group">
-      <label for="lastname">Lastname</label>
-      <input type="text" class="form-control" required="true" name="lastname" id="lastname" aria-describedby="lastname" placeholder="Enter lastname">
-    </div>
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" class="form-control" required="true" name="username" id="username" aria-describedby="username" placeholder="Enter username">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" name="email" class="form-control" required="true" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" name="password" class="form-control" required="true" id="password" placeholder="Enter password">
-    </div>
-    <div class="form-group">
-      <label for="password">Confirm Password</label>
-      <input type="password" name="password1" class="form-control" required="true" id="password" placeholder="Enter password">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
 {% endblock %}

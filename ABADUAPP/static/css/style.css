@@ -14,3 +14,9 @@
     text-decoration: none;
     color: black;
 }
+
+
+#navbar a:hover {
+    color: #000;
+    background-color: #ccc;
+  }

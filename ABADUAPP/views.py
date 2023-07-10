@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Customer,Messages,Gallery,blog
 # Create your views here.
 
 def index(request):
@@ -20,4 +20,11 @@ def signinadmin(request):
     return render(request,'adminsite/login.html')
 
 def customergallery(request):
-    return render(request,'customer/gallery.html')
+    posts = Gallery.objects.all()
+    cards = blog.objects.all()
+    context = {
+        'posts':posts,
+        'cards':cards
+    }
+
+    return render(request,'customer/gallery.html',context)

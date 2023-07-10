@@ -18,3 +18,6 @@ def registeradmin(request):
 def signinadmin(request):
 
     return render(request,'adminsite/login.html')
+
+def customergallery(request):
+    return render(request,'customer/gallery.html')

@@ -10,10 +10,13 @@ urlpatterns = [
     path('register/',views.registeradmin,name='register'),
     path('gallery/',views.customergallery, name='gallery'),
     path('adminblog/',views.adminblog,name='adminblog'),
+    path('create_event/',views.create_event,name='create_event'),
     path('admingallery/',views.admingallery,name='admingallery'),
     path('delete/<int:pk>/',views.deletegallery,name='deletegallery'),
+    path('delete_event/<int:pk>/',views.delete_event,name='delete_event'),
     path('update/<int:pk>/', views.updategallery, name='updategallery'),
-    path('updateevent/<int:pk>/', views.updategallery, name='updateevent'),
+    path('updateevent/<int:pk>/', views.update_event, name='updateevent'),
+    path('donation/',views.donationsite,name='donation')
 ]
 
 if settings.DEBUG:

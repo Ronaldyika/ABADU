@@ -94,10 +94,16 @@ def updategallery(request,pk):
     return render(request, 'adminsite/blog.html', {'form': form})
 
 
-#this update is still to be implemented
+def delete_event(request,pk):
+
+    item = blogpost.objects.get(pk=pk)
+    item.delete()
+
+    return redirect('admingallery')
+
 
 def update_event(request,pk):
-    item = get_object_or_404(blogpost, pk=pk)
+    item = get_object_or_404(blogpost,pk=pk)
     if request.method == 'POST':
         form = Blogform(request.POST, request.FILES, instance=item)
         
@@ -106,4 +112,27 @@ def update_event(request,pk):
             return redirect('admingallery')
     else:
         form = Blogform(instance=item)
+    return render(request, 'adminsite/blog.html', {'form': form})
+
+
+def donationsite(request):
+    event = blogpost.objects.all()
+    if event.exists():
+        return render(request,'base/donation.html')
+
+    else:
+
+        return redirect('base')
+
+def create_event(request):
+    if request.method == 'POST':
+        form = Blogform(request.POST, request.FILES)
+        if form.is_valid():
+            description = form.cleaned_data['description']
+            image = form.cleaned_data['image']
+            gallery = blogpost(description=description, image=image)
+            gallery.save()
+            return redirect('admingallery') 
+    else:
+        form = blogpost()
     return render(request, 'adminsite/blog.html', {'form': form})

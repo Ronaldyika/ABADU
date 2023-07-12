@@ -30,7 +30,8 @@
         </nav>
         <div class="col" id="navbar">
             <nav class="nav nav-pills justify-content-end" id="nav" id="navbar">
-                <a class="nav-item nav-link " href="{% url 'base' %}">Chat</a>
+                <a class="nav-item nav-link " href="{% url 'base' %}">HOME</a>
+                <a class="nav-item nav-link " href="">Chat</a>
                 <a class="nav-item nav-link" href="">ABOUT</a>
             </nav>
         </div>
@@ -62,7 +63,7 @@
                     </div>
                   </marquee>  
                   <div class="card-body">
-                    <h5 class="display2" style="color: white;">Proceed to make donations.. <a href="" style="text-decoration: none;">DONATE</a></h5>
+                    <h5 class="display2" style="color: white;">Proceed to make donations.. <a href="{% url 'donation' %}" style="text-decoration: none;">DONATE</a></h5>
                   </div>
                 </div>
               </div>
@@ -81,7 +82,7 @@
               <h3 class=" text-center text-white"><b>Completed Tasks</b></h3>
                 <div class="row">
                   {% for post in posts %}
-                  <div class="col mb-3">
+                  <div class="col-3 mb-3">
                     <div class="card">
                       <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                       <div class="card-body">

@@ -1,5 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import blogpost,Messages,Gallery,Admininfo
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from .models import blogpost,Message,Gallery,Admininfo
 from .forms import Galleryform,Blogform
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,authenticate
@@ -136,3 +139,9 @@ def create_event(request):
     else:
         form = blogpost()
     return render(request, 'adminsite/blog.html', {'form': form})
+
+
+def chatcustomer(request):
+    
+    return render(request,'customer/chat.html')
+

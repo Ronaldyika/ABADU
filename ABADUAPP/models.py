@@ -13,10 +13,14 @@ class Gallery(models.Model):
     description = models.TextField()
     date_posted = models.DateTimeField(auto_now_add='true')
 
-class Messages(models.Model):
-    sender = models.ForeignKey(User,on_delete=models.CASCADE)
+class Message(models.Model):
+    sender = models.ForeignKey(Admininfo, on_delete=models.CASCADE, related_name='sent_messages')
+    recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_messages')
     content = models.TextField()
-    sent_date = models.DateField(auto_now_add='true')
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.sender} -> {self.recipient}: {self.content[:50]}"
 
 
     def __str__(self):

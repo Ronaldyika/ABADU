@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<br><br><br>
+<div class="container py-5">
+    <br>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <ul class="list-unstyled mb-0">
+            {% for message in messages %}
+              <li class="media {% if message.sender == request.user %} align-self-end{% else %}align-self-start{% endif %}">
+                <div class="media-body bg-light rounded p-2">
+                  <small class="text-muted">{{ message.timestamp|date:"F j, Y, g:i a" }}</small>
+                  <p class="mb-0">{{ message.content }}</p>
+                </div>
+              </li>
+            {% empty %}
+              <li class="text-center my-3"><em>No messages yet</em></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-group mb-0">
+          <textarea class="form-control" name="content" rows="3" placeholder="Type your message here..."></textarea>
+        </div>
+        <button class="btn btn-primary mt-2" type="submit">Send</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -3,44 +3,154 @@
 {% block title %}Landing page{% endblock %}
 
 {% block content %}
+{% load static %}
 <br><br>
-    <section>
-        <div class="container text-center"><br>
-            <div class="container"><br>
-                <div class="row"><br>
-                    <div class="col"><br>
-                        <div class="col-md"><br>
-                            <div class="card-1 "><br>
-                                <div class="card-title">
-                                    <h2 class="display2 " style="color: yellow;">GIVE A HELPING HAND</h2>
-                                </div>
-                                <div>
-                                    <h2 style="color: white;"><strong>TOGETHER LETS BUILD OUR COMMUNITY</strong></h2>
-                                    <marquee behavior="" direction="">
-                                        <h5 style="color: white;" class="display5">welcome to ABASSAKOM association of developement union(ABADU)</h5>
-                                        <h5 style="color: white;" class="display5"> for it is when we come together that we are stronger and divided we end in callamity</h5>
-                                    </marquee>
-                                </div>
-                            </div>
-                            <div class="signup"><br><br>
-                                <div class="dropdown">
-                                    <button class="btn btn-button bg-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    SignIn
-                                    </button>
-                                    <div class="dropdown-menu">
-                                    <a class="dropdown-item hover-info" href="{% url 'login' %}">User Login</a>
-                                    <a class="dropdown-item" href="{% url 'signin' %}">Admin Login</a>
-                                    </div>
-                                    <button class="btn btn-button " style="background-color: yellow;" ><a href="{% url 'regcustomer' %}">SignUp</a></button>
+<section>
+    <div class="container text-center"><br>
+        <div class="container"><br>
+            <div class="row justify-content-center align-items-center"><br>
+                <!-- add column for button and text block -->
+                <div class="col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="btn btn-success rounded-pill mb-3"><a href="{% url 'gallery'  %}" style="text-decoration: none; color: white;">View Projects</a></button>
+                        <p class="text-white text-center">ABASAKOM Association of Development Union (ABADU) is a community-based organization dedicated to improving the lives of people in our community. We work together to implement projects and programs that promote sustainable development and improve the well-being of our community members. Join us today and be a part of the change!</p>
+                    </div>
+                </div>
+                <div class="col-md-6"><br>
+                    <div class="card-1 "><br>
+                        <div class="card-title d-flex align-items-center justify-content-center mb-3">
+                            <div class="make-donations-container">
+                                <div class="make-donations-bg animate__animated animate__infinite animate__rotateIn" style="background-color: #28a745;"></div>
+                                <div class="make-donations-text">
+                                    <p>Make a Donation Today!</p>
+                                    <button class="btn btn-success rounded-pill animate__animated animate__infinite animate__pulse">Make Donations</button>
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            <h2 class="display2 " style="color: yellow;">GIVE A HELPING HAND</h2>
+                            <h2 style="color: white;"><strong>TOGETHER LETS BUILD OUR COMMUNITY</strong></h2>
+                            <marquee behavior="" direction="">
+                                <h5 style="color: white;" class="display5">welcome to ABASSAKOM association of developement union(ABADU)</h5>
+                                <h5 style="color: white;" class="display5"> for it is when we come together that we are stronger and divided we end in callamity</h5>
+                            </marquee>
                         </div>
                     </div>
                 </div>
             </div>
-        
         </div>
-    </section>
-    <br><br>
+    </div>
+</section>
+<br><br>
+
+<div class="success-popup">
+    <div class="success-message">Success!</div>
+</div>
 
 {% endblock %}
+
+<style>
+.card-title {
+    height: 360px;
+    margin: 0 auto; 
+    position: relative;
+}
+.logo-container {
+    animation-duration: 3s;
+    border-radius: 10px; /* make it slightly rounded */
+    overflow: hidden; /* hide any content that exceeds the border */
+    margin: 0 auto; /* center the image horizontally */
+    display: flex; /* use flexbox */
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+} 
+.logo {
+    max-width: 100%; /* set the maximum width to adjust to the container */
+    opacity: 0.5; /* set the opacity */
+}
+/* animate the logo on hover */
+.logo-container:hover .logo {
+    animation-name: maximize;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes maximize {
+    from {
+        max-width: 100%;
+    }
+    to {
+        max-width: 200%;
+    }
+}
+
+/* make donations */
+.make-donations-container {
+    position: absolute; /* set the position to absolute */
+    bottom: 0; /* align to the bottom */
+    left: 0; /* align to the left */
+    width: 100%; /* set the width to 100% */
+    height: 60px; /* set the height */
+    display: flex; /* use flexbox */
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+}
+.make-donations-bg {
+    position: absolute; /* set the position to absolute */
+    top: -10px; /* move it up a bit */
+    left: -10px; /* move it left a bit */
+    width: calc(100% + 20px); /* set the width to the card title width + 20px */
+    height: calc(60px + 20px); /* set the height to the make-donations-container height + 20px */
+    border-radius: 10px; /* make it slightly rounded */
+    z-index: -1; /* set the z-index to -1 to move it behind the make-donations-text */
+}
+.make-donations-text {
+    display: flex; /* use flexbox */
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    position: relative; /* set the position to relative */
+    z-index: 1; /* set the z-index to 1 to move it in front of the make-donations-bg */
+}
+/* animate the make-donations-bg on hover */
+.make-donations-container:hover .make-donations-bg {
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* success popup */
+.success-popup {
+    position: fixed; /* set the position to fixed */
+    top: 50%; /* align to the center vertically */
+    left: 50%; /* align to the center horizontally */
+    transform: translate(-50%, -50%); /* move it back up and left */
+    background-color: rgba(0, 0, 0, 0.7); /* set the background color to semi-transparent black */
+    display: none; /* hide by default */
+}
+.success-message {
+    background-color: #28a745; /* set the background color to green */
+    color: white; /* set the text color to white */
+    padding: 20px; /* add some padding */
+    border-radius: 10px; /* make it slightly rounded */
+    font-size: 24px; /* set the font size */
+}
+</style>
+
+<script>
+$(document).ready(function() {
+    // show the success popup when the button is clicked
+    $('.btn-success').click(function() {
+        $('.success-popup').fadeIn();
+        setTimeout(function() {
+            $('.success-popup').fadeOut();
+        }, 2000); // hide the popup after 2 seconds
+    });
+});
+</script>

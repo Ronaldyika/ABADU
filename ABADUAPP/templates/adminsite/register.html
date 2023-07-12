@@ -12,6 +12,7 @@
               <h1 class="text-white">Admin Registration</h1>
             </marquee>
             <form action="" method="post">
+              {% csrf_token %}
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input style="border-radius: 2rem;" type="email" class="form-control" id="email" name="email">
@@ -26,10 +27,21 @@
               </div>
               <div class="mb-3">
                 <label for="passwordConfirm" class="form-label">Confirm Password</label>
-                <input style="border-radius: 2rem;" type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+                <input style="border-radius: 2rem;" type="password" class="form-control" id="passwordConfirm" name="password1">
               </div>
               <button type="submit" class="btn btn-success text-center">Register</button>
             </form>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  {% for message in messages %}
+                  <div class="card">
+                    {{ message }}
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>

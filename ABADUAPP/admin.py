@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Customer,Messages,Gallery,blog
+from .models import Messages,Gallery,blogpost,Admininfo
 
 # Register your models here.
-admin.site.register(Customer)
 admin.site.register(Messages)
 admin.site.register(Gallery)
-admin.site.register(blog)
+admin.site.register(blogpost)
+admin.site.register(Admininfo)

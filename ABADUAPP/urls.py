@@ -7,10 +7,13 @@ from django.conf import settings
 urlpatterns = [
     path('',views.index, name='base'),
     path('signin/',views.signinadmin,name='signin'),
-    path('regcustomer/',views.registercustomer,name='regcustomer'),
-    path('login/',views.logincustomer,name='login'),
     path('register/',views.registeradmin,name='register'),
-    path('gallery/',views.customergallery, name='gallery')
+    path('gallery/',views.customergallery, name='gallery'),
+    path('adminblog/',views.adminblog,name='adminblog'),
+    path('admingallery/',views.admingallery,name='admingallery'),
+    path('delete/<int:pk>/',views.deletegallery,name='deletegallery'),
+    path('update/<int:pk>/', views.updategallery, name='updategallery'),
+    path('updateevent/<int:pk>/', views.updategallery, name='updateevent'),
 ]
 
 if settings.DEBUG:

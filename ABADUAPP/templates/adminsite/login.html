@@ -12,9 +12,10 @@
             <h1 class="text-white">Admin Login</h1>
         </marquee>
         <form action="" method="post">
+          {% csrf_token %}
           <div class="mb-3">
-            <label for="username" class="form-label">Email</label>
-            <input style="border-radius: 2rem;" type="email" class="form-control" id="email" name="email">
+            <label for="username" class="form-label">Username</label>
+            <input style="border-radius: 2rem;" type="text" class="form-control" id="username" name="username">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
@@ -22,6 +23,15 @@
           </div>
           <button type="submit" class="btn btn-success text-center">Login</button>
         </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        {% for message in messages %}
+        <div class="message">
+          {{ message }}
+        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

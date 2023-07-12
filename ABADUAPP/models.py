@@ -1,14 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
-class Customer(models.Model):
-    username = models.CharField(max_length=255)
-    email = models.EmailField(max_length=255)
-    password = models.CharField(max_length=50)
+class Admininfo(User):
 
     def __str__(self):
         return self.username
-    
+
 class Gallery(models.Model):
     title = models.CharField(max_length=20)
     image = models.FileField(upload_to='media')
@@ -16,7 +14,7 @@ class Gallery(models.Model):
     date_posted = models.DateTimeField(auto_now_add='true')
 
 class Messages(models.Model):
-    sender = models.ForeignKey(Customer,on_delete=models.CASCADE)
+    sender = models.ForeignKey(User,on_delete=models.CASCADE)
     content = models.TextField()
     sent_date = models.DateField(auto_now_add='true')
 
@@ -24,6 +22,6 @@ class Messages(models.Model):
     def __str__(self):
         return self.sender
 
-class blog(models.Model):
+class blogpost(models.Model):
     image = models.ImageField(upload_to='media')
     description = models.TextField()

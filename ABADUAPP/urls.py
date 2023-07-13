@@ -16,8 +16,9 @@ urlpatterns = [
     path('delete_event/<int:pk>/',views.delete_event,name='delete_event'),
     path('update/<int:pk>/', views.updategallery, name='updategallery'),
     path('updateevent/<int:pk>/', views.update_event, name='updateevent'),
-    path('donation/',views.donationsite,name='donation'),
-    path('chatcustomer/', views.chatcustomer, name='chatcustomer'),  
+    path('donation/',views.donationsite,name='donation'), 
+    path('chatroom',views.HomePage,name='home'),
+    path('<str:room_name>/<str:username>/',views.messageview,name='room'),
 ]
 
 if settings.DEBUG:

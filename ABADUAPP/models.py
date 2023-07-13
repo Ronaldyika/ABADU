@@ -2,6 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Room(models.Model):
+    room_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.room_name
 class Admininfo(User):
 
     def __str__(self):
@@ -14,17 +19,9 @@ class Gallery(models.Model):
     date_posted = models.DateTimeField(auto_now_add='true')
 
 class Message(models.Model):
-    sender = models.ForeignKey(Admininfo, on_delete=models.CASCADE, related_name='sent_messages')
-    recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_messages')
-    content = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.sender} -> {self.recipient}: {self.content[:50]}"
-
-
-    def __str__(self):
-        return self.sender
+    room = models.ForeignKey(Room,on_delete=models.CASCADE, default='')
+    sender = models.CharField(max_length=255)
+    message = models.TextField()
 
 class blogpost(models.Model):
     image = models.ImageField(upload_to='media')

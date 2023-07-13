@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import blogpost,Message,Gallery,Admininfo
+from .models import blogpost,Message,Gallery,Admininfo,Room
 from .forms import Galleryform,Blogform
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,authenticate
@@ -140,8 +140,36 @@ def create_event(request):
         form = blogpost()
     return render(request, 'adminsite/blog.html', {'form': form})
 
+#this section deals with the chat section
 
-def chatcustomer(request):
-    
-    return render(request,'customer/chat.html')
+def HomePage(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        room = request.POST['room']
 
+        try:
+            get_room = Room.objects.get(room_name=room)
+            return redirect('room', room_name=room, username=username)
+        
+        except Room.DoesNotExist:
+            new_room = Room(room_name = room)
+            new_room.save()
+            return redirect('room',room_name=room,username=username)    
+    return render(request, 'chat/index.html')
+
+def messageview(request,room_name,username):
+    get_room = Room.objects.get(room_name=room_name)
+    if request.method =='POST':
+        message = request.POST['message']
+
+        new_message = Message(room=get_room,sender=username,message=message)
+        new_message.save()
+
+    get_messages = Message.objects.filter(room=get_room)
+
+    context = {
+        'messages':get_messages,
+        'user':username
+    }
+
+    return render(request,'chat/message.html',context)

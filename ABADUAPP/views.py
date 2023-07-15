@@ -157,7 +157,7 @@ def HomePage(request):
             return redirect('room',room_name=room,username=username)    
     return render(request, 'chat/index.html')
 
-def messageview(request,room_name,username):
+def room(request,room_name,username):
     get_room = Room.objects.get(room_name=room_name)
     if request.method =='POST':
         message = request.POST['message']
@@ -173,3 +173,19 @@ def messageview(request,room_name,username):
     }
 
     return render(request,'chat/message.html',context)
+
+def available_rooms(request):
+
+    get_room = Room.objects.all()
+    context = {
+        'get_room':get_room
+    }
+
+    return render(request,'adminsite/available_rooms.html',context)
+
+def del_all_rooms(ruquest):
+    rooms = Room.objects.all()
+    
+    rooms.delete()
+    print(rooms)    
+    return redirect('available_rooms')

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages</title>
     <!-- load static -->
-    {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- link to h=css file -->
@@ -22,15 +22,15 @@
                       <!-- received messages and displayed here -->
                         {% for i in messages %}
                             {% if i.sender != user %}
-                            <div class="receive">
-                              <p> <strong><i>~{{ i.sender }}~ </i></strong></p><hr>
+                            <div class="receive" style="background-color: rgb(219, 215, 210);">
+                              <p style="color: rgba(16, 16, 174, 0.3);"> <strong><i>~{{ i.sender }}~ </i></strong></p><hr>
                               <p style="color: #000;">{{ i.message }}</p>
                             </div>
                             {% else %}
                                 <!-- messages sent from user are displayed here -->
-                            <div class="send">
-                                <p> <strong><i>~{{ i.sender }}~ </i></strong></p><hr>
-                                <p style="color: #f2f2f2;">{{ i.message }}</p>
+                            <div class="send" style="background-color: rgb(238, 226, 226);">
+                                <p> <strong style="color: rgba(16,16,173,0.34);"><i>~{{ i.sender }}~ </i></strong></p><hr>
+                                <p style="color: #252424;">{{ i.message }}</p>
                             </div>
                                 <!-- end sent messages  -->
 

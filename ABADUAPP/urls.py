@@ -3,7 +3,6 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
-
 urlpatterns = [
     path('',views.index, name='base'),
     path('signin/',views.signinadmin,name='signin'),
@@ -18,7 +17,9 @@ urlpatterns = [
     path('updateevent/<int:pk>/', views.update_event, name='updateevent'),
     path('donation/',views.donationsite,name='donation'), 
     path('chatroom',views.HomePage,name='home'),
-    path('<str:room_name>/<str:username>/',views.messageview,name='room'),
+    path('<str:room_name>/<str:username>/',views.room,name='room'),
+    path('available_rooms/',views.available_rooms,name='available_rooms'),
+    path('del_all_rooms',views.del_all_rooms,name='del_all_rooms')
 ]
 
 if settings.DEBUG:

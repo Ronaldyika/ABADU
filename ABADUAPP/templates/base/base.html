@@ -60,7 +60,7 @@
                 <div class="col" id="navbar">
                     <nav class="nav nav-pills justify-content-end" id="nav" id="navbar">
                         <a class="nav-item nav-link " href="{% url 'base' %}">HOME</a>
-                        <a class="nav-item nav-link" href="">ABOUT</a>
+                        <a class="nav-item nav-link" href="{% url 'about' %}">ABOUT</a>
                         <a class="nav-item nav-link" href="{% url 'signin' %}">Admin</a>
                     </nav>
                 </div>
@@ -76,9 +76,11 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-4">
-                      <h5>About Us</h5>
-                      <p>We are a team of developers building </p>
-                      <p>innovative solutions to complex problems</p>
+                      <h5><a style="text-decoration: none;" href="{% url 'about' %}">About</a></h5>
+                      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        This Association is opened to affiliating to other Associations with the same objectives when needs arises.ABADU seeks financial or material assistance when needs arises from government and non_governmental organisations within and outside cameoon to facilitate its developemental projects.
+                        ABADU has its head office at
+                      </p>
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4">

@@ -19,7 +19,8 @@ urlpatterns = [
     path('chatroom',views.HomePage,name='home'),
     path('<str:room_name>/<str:username>/',views.room,name='room'),
     path('available_rooms/',views.available_rooms,name='available_rooms'),
-    path('del_all_rooms',views.del_all_rooms,name='del_all_rooms')
+    path('del_all_rooms',views.del_all_rooms,name='del_all_rooms'),
+    path('about/',views.about,name='about'),
 ]
 
 if settings.DEBUG:

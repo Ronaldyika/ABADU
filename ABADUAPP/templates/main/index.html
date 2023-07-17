@@ -10,10 +10,32 @@
         <div class="container"><br>
             <div class="row justify-content-center align-items-center"><br>
                 <!-- add column for button and text block -->
-                <div class="col-md-3">
-                    <div class="d-flex flex-column align-items-center">
-                        <button class="btn btn-success rounded-pill mb-3"><a href="{% url 'gallery'  %}" style="text-decoration: none; color: white;">View Projects</a></button>
-                        <p class="text-white text-center">ABASAKOM Association of Development Union (ABADU) is a community-based organization dedicated to improving the lives of people in our community. We work together to implement projects and programs that promote sustainable development and improve the well-being of our community members. Join us today and be a part of the change!</p>
+                <div class="col-md-6">
+                    <div class=" flex-column float-left">
+                        <button class="btn btn-success rounded-pill mb-3"><a href="{% url 'gallery'  %}" style="text-decoration: none; color:black;">View Projects</a></button>
+                        <div  class="container" style="font-family: 'Times New Roman', Times, serif;">
+                            <div class="row text-white" id="my-animation">
+                                <div class="col">
+                                    <p class=" text-left"><b>
+                                        This Association is opened to affiliating to other Associations with the same objectives when
+                                        needs arises.ABADU seeks financial or material assistance when needs arises from government
+                                        and non_governmental organisations within and outside cameoon to facilitate its developemental projects.<br>
+                                        ABADU has its head office at
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-left">
+                                        <b>
+                                            Fundong town which is the headquarters of both Fundong sub Division
+                                            and BOYO Division.The area of jurisdiction of ABADU is Fundong sub Division also reffered  to as
+                                            Home zone and her external branches all over the Republic of Csamerooon and abroad provided that 
+                                            her developement projects shall all be baseed at the Home zone area(Abassakom.)
+                                            </b>
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6"><br>
@@ -21,9 +43,9 @@
                         <div class="card-title d-flex align-items-center justify-content-center mb-3">
                             <div class="make-donations-container">
                                 <div class="make-donations-bg animate__animated animate__infinite animate__rotateIn" style="background-color: #28a745;"></div>
-                                <div class="make-donations-text">
-                                    <p>Make a Donation Today!</p>
-                                    <button class="btn btn-success rounded-pill animate__animated animate__infinite animate__pulse"><a style="text-decoration: none; color: white;" href="{% url 'donation' %}">Make Donations</a></button>
+                                <div class="make-donations-text" style="color: rgb(223, 154, 5);">
+                                    <h5><b> Make a Donation Today!</b></h5>
+                                    <button class="btn btn-success rounded-pill animate__animated animate__infinite animate__pulse"><a style="text-decoration: none; color: rgb(27, 26, 26);" href="{% url 'donation' %}">Make Donations</a></button>
                                 </div>
                             </div>
                         </div>
@@ -31,8 +53,8 @@
                             <h2 class="display2 " style="color: yellow;">GIVE A HELPING HAND</h2>
                             <h2 style="color: white;"><strong>TOGETHER LETS BUILD OUR COMMUNITY</strong></h2>
                             <marquee behavior="" direction="">
-                                <h5 style="color: white;" class="display5">welcome to ABASSAKOM association of developement union(ABADU)</h5>
-                                <h5 style="color: white;" class="display5"> for it is when we come together that we are stronger and divided we end in callamity</h5>
+                                <h5 style="color:black;" class="display5">welcome to ABASSAKOM association of developement union(ABADU)</h5>
+                                <h5 style="color:black;" class="display5"> for it is when we come together that we are stronger and divided we end in callamity</h5>
                             </marquee>
                         </div>
                     </div>
@@ -64,93 +86,106 @@
     justify-content: center; /* center horizontally */
     align-items: center; /* center vertically */
 } 
+#my-animation {
+    animation: zoom-in 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 .logo {
     max-width: 100%; /* set the maximum width to adjust to the container */
     opacity: 0.5; /* set the opacity */
 }
-/* animate the logo on hover */
-.logo-container:hover .logo {
-    animation-name: maximize;
-    animation-duration: 2s;
+/* animate the logo onhover */
+.logo:hover {
+    animation-duration: 1s;
+    animation-name: zoom-out;
     animation-fill-mode: forwards;
 }
-@keyframes maximize {
+@keyframes zoom-out {
     from {
-        max-width: 100%;
+        transform: scale(1);
+        opacity: 1;
     }
     to {
-        max-width: 200%;
+        transform: scale(1.2);
+        opacity: 0.5;
     }
 }
-
-/* make donations */
-.make-donations-container {
-    position: absolute; /* set the position to absolute */
-    bottom: 0; /* align to the bottom */
-    left: 0; /* align to the left */
-    width: 100%; /* set the width to 100% */
-    height: 60px; /* set the height */
-    display: flex; /* use flexbox */
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
+.success-popup {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+.success-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: #28a745;
+    text-shadow: 2px 2px #fff;
 }
 .make-donations-bg {
-    position: absolute; /* set the position to absolute */
-    top: -10px; /* move it up a bit */
-    left: -10px; /* move it left a bit */
-    width: calc(100% + 20px); /* set the width to the card title width + 20px */
-    height: calc(60px + 20px); /* set the height to the make-donations-container height + 20px */
-    border-radius: 10px; /* make it slightly rounded */
-    z-index: -1; /* set the z-index to -1 to move it behind the make-donations-text */
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    border-radius: 10px;
 }
 .make-donations-text {
-    display: flex; /* use flexbox */
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
-    position: relative; /* set the position to relative */
-    z-index: 1; /* set the z-index to 1 to move it in front of the make-donations-bg */
+    position: relative;
+    z-index: 1;
+    text-align: center;
 }
-/* animate the make-donations-bg on hover */
-.make-donations-container:hover .make-donations-bg {
-    animation-name: rotate;
+.animate__pulse {
+    animation-duration: 1s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+}
+.animate__rotateIn {
     animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation-name: rotate-in;
+    animation-iteration-count: infinite;
 }
-@keyframes rotate {
-    from {
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.animate__infinite {
+    animation-iteration-count: infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes rotate-in {
+    0% {
         transform: rotate(0deg);
     }
-    to {
+    100% {
         transform: rotate(360deg);
     }
 }
-
-/* success popup */
-.success-popup {
-    position: fixed; /* set the position to fixed */
-    top: 50%; /* align to the center vertically */
-    left: 50%; /* align to the center horizontally */
-    transform: translate(-50%, -50%); /* move it back up and left */
-    background-color: rgba(0, 0, 0, 0.7); /* set the background color to semi-transparent black */
-    display: none; /* hide by default */
-}
-.success-message {
-    background-color: #28a745; /* set the background color to green */
-    color: white; /* set the text color to white */
-    padding: 20px; /* add some padding */
-    border-radius: 10px; /* make it slightly rounded */
-    font-size: 24px; /* set the font size */
-}
 </style>
-
-<script>
-$(document).ready(function() {
-    // show the success popup when the button is clicked
-    $('.btn-success').click(function() {
-        $('.success-popup').fadeIn();
-        setTimeout(function() {
-            $('.success-popup').fadeOut();
-        }, 2000); // hide the popup after 2 seconds
-    });
-});
-</script>

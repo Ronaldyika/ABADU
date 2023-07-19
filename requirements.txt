@@ -1,4 +1,4 @@
-asgiref==3.6.01
+asgiref==3.6.0
 Django==4.2.1
 python-dateutil==2.7.3
 six==1.14.0

@@ -1,0 +1,13 @@
+{
+    "builds":[{
+        "src":"ABADUWEBSITE/wsgi.py",
+        "use":"@vercel/python",
+        "config":{"maxLambdaSize": "15mb", "runtime": "python3"}
+    }],
+    "routes":[
+        {
+            "src": "/(.*)",
+            "dest":"ABADUWEBSITE/wsgi.py"
+        }
+    ]
+}

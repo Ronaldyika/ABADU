@@ -1,1 +1,0 @@
-web:gunicorn ABADUWEBSITE.wsgi --log-file -

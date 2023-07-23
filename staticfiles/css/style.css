@@ -1,0 +1,22 @@
+#nav a {
+    text-decoration: none;
+    color: white;
+}
+#title a {
+    text-decoration: none;
+    color: white;
+}
+#logo img{
+    border-radius: 50%;
+    width: 4%;
+}
+.signup a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#navbar a:hover {
+    color: #000;
+    background-color: #ccc;
+  }

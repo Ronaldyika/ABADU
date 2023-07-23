@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns 
 from django.conf import settings
 
 urlpatterns = [
@@ -22,6 +23,8 @@ urlpatterns = [
     path('del_all_rooms',views.del_all_rooms,name='del_all_rooms'),
     path('about/',views.about,name='about'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
 

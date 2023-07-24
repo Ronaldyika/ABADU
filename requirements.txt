@@ -1,7 +1,11 @@
 asgiref==3.7.2
 backports.zoneinfo==0.2.1
-Django==3.2
-Pillow==9.5.0
+dj-database-url==2.0.0
+Django==4.0
+gunicorn==21.2.0
+packaging==23.1
+Pillow==10.0.0
 #pkg_resources==0.0.0
+psycopg2-binary==2.9.6
 sqlparse==0.4.4
 typing_extensions==4.7.1

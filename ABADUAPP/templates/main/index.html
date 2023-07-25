@@ -6,52 +6,16 @@
 {% load static %}
 <br><br>
 <section>
+    <br>
     <div class="container text-center"><br>
         <div class="container"><br>
             <div class="row justify-content-center align-items-center"><br>
                 <!-- add column for button and text block -->
-                <div class="col-md-6">
-                    <div class=" flex-column float-left">
-                        <button class="btn btn-success rounded-pill mb-3"><a href="{% url 'gallery'  %}" style="text-decoration: none; color:black;">View Projects</a></button>
-                        <div  class="container" style="font-family: 'Times New Roman', Times, serif;">
-                            <div class="row text-white" id="my-animation">
-                                <div class="col">
-                                    <p class=" text-left"><b>
-                                        This Association is opened to affiliating to other Associations with the same objectives when
-                                        needs arises.ABADU seeks financial or material assistance when needs arises from government
-                                        and non_governmental organisations within and outside cameoon to facilitate its developemental projects.<br>
-                                        ABADU has its head office at
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p class="text-left">
-                                        <b>
-                                            Fundong town which is the headquarters of both Fundong sub Division
-                                            and BOYO Division.The area of jurisdiction of ABADU is Fundong sub Division also reffered  to as
-                                            Home zone and her external branches all over the Republic of Csamerooon and abroad provided that 
-                                            her developement projects shall all be baseed at the Home zone area(Abassakom.)
-                                            </b>
-                                        </b>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6"><br>
+                <div class="col"><br>
                     <div class="card-1 "><br>
-                        <div class="card-title d-flex align-items-center justify-content-center mb-3">
-                            <div class="make-donations-container">
-                                <div class="make-donations-bg animate__animated animate__infinite animate__rotateIn" style="background-color: #28a745;"></div>
-                                <div class="make-donations-text" style="color: rgb(223, 154, 5);">
-                                    <h5><b> Make a Donation Today!</b></h5>
-                                    <button class="btn btn-success rounded-pill animate__animated animate__infinite animate__pulse"><a style="text-decoration: none; color: rgb(27, 26, 26);" href="{% url 'donation' %}">Make Donations</a></button>
-                                </div>
-                            </div>
-                        </div>
                         <div>
-                            <h2 class="display2 " style="color: yellow;">GIVE A HELPING HAND</h2>
-                            <h2 style="color: white;"><strong>TOGETHER LETS BUILD OUR COMMUNITY</strong></h2>
+                            <h2 class="display2 " style="color: rgb(1, 10, 26);">GIVE A HELPING HAND</h2>
+                            <h2 style="color: rgb(23, 22, 22);"><strong>TOGETHER LETS BUILD OUR COMMUNITY</strong></h2>
                             <marquee behavior="" direction="">
                                 <h5 style="color:black;" class="display5">welcome to ABASSAKOM association of developement union(ABADU)</h5>
                                 <h5 style="color:black;" class="display5"> for it is when we come together that we are stronger and divided we end in callamity</h5>
@@ -63,129 +27,6 @@
         </div>
     </div>
 </section>
-<br><br>
-
-<div class="success-popup">
-    <div class="success-message">Success!</div>
-</div>
+<br><br><br>
 
 {% endblock %}
-
-<style>
-.card-title {
-    height: 360px;
-    margin: 0 auto; 
-    position: relative;
-}
-.logo-container {
-    animation-duration: 3s;
-    border-radius: 10px; /* make it slightly rounded */
-    overflow: hidden; /* hide any content that exceeds the border */
-    margin: 0 auto; /* center the image horizontally */
-    display: flex; /* use flexbox */
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
-} 
-#my-animation {
-    animation: zoom-in 1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes zoom-in {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-.logo {
-    max-width: 100%; /* set the maximum width to adjust to the container */
-    opacity: 0.5; /* set the opacity */
-}
-/* animate the logo onhover */
-.logo:hover {
-    animation-duration: 1s;
-    animation-name: zoom-out;
-    animation-fill-mode: forwards;
-}
-@keyframes zoom-out {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(1.2);
-        opacity: 0.5;
-    }
-}
-.success-popup {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-}
-.success-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
-    color: #28a745;
-    text-shadow: 2px 2px #fff;
-}
-.make-donations-bg {
-    height: 300px;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    border-radius: 10px;
-}
-.make-donations-text {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-}
-.animate__pulse {
-    animation-duration: 1s;
-    animation-name: pulse;
-    animation-iteration-count: infinite;
-}
-.animate__rotateIn {
-    animation-duration: 2s;
-    animation-name: rotate-in;
-    animation-iteration-count: infinite;
-}
-.animate__animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-.animate__infinite {
-    animation-iteration-count: infinite;
-}
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-@keyframes rotate-in {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-</style>

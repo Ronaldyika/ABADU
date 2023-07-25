@@ -192,3 +192,6 @@ def del_all_rooms(ruquest):
 
 def about(request):
     return render(request,'base/about.html')
+
+def actionplan(request):
+    return render(request,'action.html')

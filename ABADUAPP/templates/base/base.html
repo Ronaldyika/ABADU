@@ -11,7 +11,7 @@
             padding: 0 5px;
         }
         .navbar-nav .nav-link:hover {
-            background-color: gray;
+            background-color: #ee717e;
         }
     </style>
     <!-- css link  -->
@@ -23,7 +23,7 @@
 </head>
 <body>
     <header>
-        <div class="container-fluid p-4" style="background-color: rgb(0, 0, 59);">
+        <div class="container-fluid bg-danger ">
             <div class="row justify-content-center">
                 <div class="col">
                     <nav class="navbar navbar-expand-md navbar-dark">
@@ -31,14 +31,14 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="col-6">
-                            <div class="container text-white">
+                            <div class="container text-white"><br>
                                 <marquee behavior="" direction="right">
                                     <p>Moto: Unity,Self-Reliance and Progress</p>
                                 </marquee>
                             </div>
                         </div>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                            <ul class="navbar-nav ">
+                            <ul class="navbar-nav " style="font-family: sans-serif;">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'base' %}">Home</a>
                                 </li>
@@ -79,20 +79,21 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-4">
-                      <h5><a style="text-decoration: none;" href="{% url 'about' %}">About</a></h5>
+                      <h5><a style="text-decoration: none; color: yellow;" href="{% url 'about' %}">About</a></h5>
                       <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
                         This Association is opened to affiliating to other Associations with the same objectives when needs arises.ABADU seeks financial or material assistance when needs arises from government and non_governmental organisations within and outside cameoon to facilitate its developemental projects.
                         ABADU has its head office at
                       </p>
                     </div>
                     <div class="col-md-4">
-                        <button  class="btn btn-button"><a style="text-decoration: none; color:black;" href="{% url 'signin' %}"> Admin SignIn</a></button>
+                        
                     </div>
                     <div class="col-md-4">
                       <h5>Contact Us</h5>
                       <p>Email: info@abadu.com</p>
                       <p>Phone: + (237) 6-51-21-10-00</p>
                       <p>Address: 123 corners, BAMENDA, BAMBILI</p>
+                      <button  class="btn btn-button bg-danger" style="border-radius: 3rem;"><a style="text-decoration: none; color:white;" href="{% url 'signin' %}"> Admin SignIn</a></button>
                     </div>
                   </div>
                   <div class="row mt-3">

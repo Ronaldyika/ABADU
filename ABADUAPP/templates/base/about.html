@@ -9,22 +9,8 @@
         overflow: hidden;
     }
 
-    .ripple:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 0px;
-        height: 0px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        opacity: 0;
-    }
-
     .ripple-effect:after {
-        animation: rippleAnimation ease-in 2s;
+        animation: rippleAnimation ease-in 1s;
     }
 
     @keyframes rippleAnimation {
@@ -72,50 +58,16 @@
         color: transparent;
     }
 
-    #first-block:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        width: 0px;
-        height: 0px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        animation: rippleAnimation ease-out 2s;
-        animation-delay: 3s;
-    }
-
     #first-block.animated {
         color: black;
         opacity: 1;
-    }
-
-    #second-block {
-        transform: rotate(0deg);
-        transition: all 0.8s ease-in-out;
-    }
-
-    .rotate {
-        animation: spin 2s linear 1;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
     }
 </style>
 
 <div class="container"><br><br><br><br><br>
     <div class="row">
         <div class="col-md-6 active ripple bounce" id="first-block">
-            <h1 class="" style="color: goldenrod;">About us</h1>
+            <h1 class="" style="color: yellow;">About us</h1>
             <p style="position: relative; z-index: 1;">ABADU (ABASSAKOM DEVELOPMENT UNION) is a political, secular, non-confessional organization with the following objectives:</p>
             <ol style="position: relative; z-index: 1;">
                 <li>To foster the socio-economic and cultural development of Fundong sub-division.</li>
@@ -133,7 +85,7 @@
             <p>ABADU has its head office at Fundong town which is the headquarters of both Fundong sub-division and BOYO Division. The area of jurisdiction of ABADU is Fundong sub-division also referred to as Home zone and her external branches all over the Republic of Cameroon and abroad provided that her developmental projects shall all be based at the Home zone area (Abassakom).</p>
         </div>
     </div><br><br>
-    <button class="btn bg-success btn-button"><a style="text-decoration: none;" href="{% url 'base' %}">Go Back To Home </a></button>
+    <button style=" border-radius: 3rem;" class="btn btn-danger btn-button"><a style="text-decoration: none;color: white;" href="{% url 'base' %}">Go Back To Home </a></button>
 </div>
 
 <!-- Add Bootstrap JS for scrolling effect -->

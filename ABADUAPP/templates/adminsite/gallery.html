@@ -11,9 +11,9 @@
           padding: 0 5px;
       }
       .navbar-nav .nav-link:hover {
-          background-color: gray;
+          background-color: #ee717e;
       }
-    </style>
+  </style>
     <!-- css link  -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-  <div class="container-fluid p-4" style="background-color: rgb(0, 0, 59);">
+  <div class="container-fluid bg-danger">
     <div class="row justify-content-center">
         <div class="col">
             <nav class="navbar navbar-expand-md navbar-dark">
@@ -31,6 +31,7 @@
                 <div class="col-6">
                     <div class="container text-white">
                         <marquee behavior="" direction="right">
+                          <br>
                             <p>Moto: Unity,Self-Reliance and Progress</p>
                         </marquee>
                     </div>
@@ -83,17 +84,17 @@
                     <div class="card-title">
                       <div class="row">
                         <div class="col-4 text-center">
-                          <h4 style="color: rgb(66, 3, 36);">{{ card.description}}</h4>
+                          <h4 style="color: rgb(179, 84, 11);">{{ card.description}}</h4>
                         </div>
                       </div>
                     </div>
                   </marquee>
                   <div class="row text-center">
                     <div class="col-6">
-                      <button class="btn-button btn bg-danger "><a href="{% url 'delete_event' card.pk %}" style="text-decoration: none;  color: black;">Delete</a></button>
+                      <button class="btn-button btn  " style="background-color: black;"><a href="{% url 'delete_event' card.pk %}" style="text-decoration: none;  color: white">Delete</a></button>
                     </div>
                     <div class="col-6">
-                      <button class="btn-button btn bg-secondary"><a href="{% url 'updateevent' card.pk %}" style="text-decoration: none;  color: black;">Update</a></button>
+                      <button class="btn-button btn bg-danger"><a href="{% url 'updateevent' card.pk %}" style="text-decoration: none;  color: white;">Update</a></button>
                     </div>
                   </div>  
                   <div class="card-body">
@@ -102,8 +103,10 @@
                 </div>
               </div>
             {% endfor %}
-            <div class="col-6 text-center">
-              <button class="btn-button btn  float-right"><a href="{% url 'create_event' %}" style="text-decoration: none;color: black;">Create Event</a></button>
+            <div class="container mx-5">
+              <div class="col-6 mx-5 text-center">
+                <button class=" btn-button btn btn-danger  float-right" ><a href="{% url 'create_event' %}" style="text-decoration: none;color: white;">Create Event</a></button>
+              </div>
             </div>
           </div>
         </div>
@@ -123,15 +126,15 @@
                     <div class="card">
                       <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                       <div class="card-body">
-                        <h5 class="card-title"><b>{{ post.title }}</b></h5>
+                        <h5 class="card-title" style="color: yellow">{{ post.title }}</h5>
                         <hr>
-                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text" >{{ post.description }}</p>
                         <div class="row text-center">
                           <div class="col-6">
-                            <button class="btn-button btn bg-danger btn-block"><a href="{% url 'deletegallery' post.pk %}" style="text-decoration:none; color: black;">Delete</a></button>
+                            <button class="btn-button btn  btn-block" style="background-color: black;"><a href="{% url 'deletegallery' post.pk %}" style="text-decoration:none; color: white;">Delete</a></button>
                           </div>
                           <div class="col-6">
-                            <button class="btn-button btn bg-secondary btn-block"><a href="{% url 'updategallery' post.pk %}" style="text-decoration: none; color: black;">Update</a></button>
+                            <button class="btn-button btn bg-danger btn-block"><a href="{% url 'updategallery' post.pk %}" style="text-decoration: none; color: white;">Update</a></button>
                           </div>
                         </div>  
                       </div>
@@ -139,47 +142,46 @@
                   </div>
                   {% endfor %}
                 </div>
-                <div class="col-6">
-                  <button class="btn-button btn  float-right"><a href="{% url 'adminblog' %}" style="text-decoration: none; color: black;">Add To Gallery</a></button>
+                <div class="container text-center mx-5">
+                  <div class="col-6 mx-5">
+                    <button class="btn-button btn btn-danger  float-right"><a href="{% url 'adminblog' %}" style="text-decoration: none; color: white;">Add To Gallery</a></button>
+                  </div>
                 </div>
               </div><br><br>
         </header>
     </div>
     <div class="footer ">
         <footer class="footer ">
-            <footer class="bg-dark text-white py-3">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <h5>About Us</h5>
-                      <p>We are a team of developers building </p>
-                      <p>innovative solutions to complex problems</p>
-                    </div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                      <h5>Contact Us</h5>
-                      <p>Email: info@abadu.com</p>
-                      <p>Phone: + (237) 6-51-21-10-00</p>
-                      <p>Address: 123 corners, BAMENDA, BAMBILI</p>
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12 text-center">
-                      <p>&copy; 2023 ABADU. All rights reserved.</p>
-                    </div>
-                  </div>
+          <footer class="bg-dark text-white py-3 ">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <h5><a style="text-decoration: none; color: yellow;" href="{% url 'about' %}">About</a></h5>
+                  <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    This Association is opened to affiliating to other Associations with the same objectives when needs arises.ABADU seeks financial or material assistance when needs arises from government and non_governmental organisations within and outside cameoon to facilitate its developemental projects.
+                    ABADU has its head office at
+                  </p>
                 </div>
-              </footer>
-
-        </footer>
-    </div>
-
-
-    <!-- js section -->
-    <script src="{% static 'js/main.js' %}"></script>
-    <!-- javascript bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+                <div class="col-md-4">
+                    
+                </div>
+                <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <p>Email: info@abadu.com</p>
+                  <p>Phone: + (237) 6-51-21-10-00</p>
+                  <p>Address: 123 corners, BAMENDA, BAMBILI</p>
+                  <button  class="btn btn-button bg-danger" style="border-radius: 3rem;"><a style="text-decoration: none; color:white;" href="{% url 'signin' %}"> Admin SignIn</a></button>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                  <p>&copy; 2023 ABADU. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

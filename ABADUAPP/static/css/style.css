@@ -15,11 +15,9 @@
     color: black;
 }
 .navbar-nav .nav-link:hover {
-    background-color: gray;
+    border-radius: 3rem;
+
 }
 
 
-#navbar a:hover {
-    color: #000;
-    background-color: #ccc;
-  }
+

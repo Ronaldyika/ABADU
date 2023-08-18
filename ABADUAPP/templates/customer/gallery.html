@@ -11,7 +11,7 @@
           padding: 0 5px;
       }
       .navbar-nav .nav-link:hover {
-          background-color: #ee717e;
+          background-color: #f0ebec;
       }
   </style>
     <!-- css link  -->
@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="row">
-        <div class="container-fluid bg-danger">
+        <div class="container-fluid bg-info">
           <div class="row justify-content-center">
               <div class="col">
                   <nav class="navbar navbar-expand-md navbar-dark">
@@ -33,35 +33,35 @@
                         <div class="container text-white">
                             <marquee behavior="" direction="right">
                               <br>
-                                <p>Moto: Unity,Self-Reliance and Progress</p>
+                                <p style="color: black;">Moto: Unity,Self-Reliance and Progress</p>
                             </marquee>
                         </div>
                     </div>
-                      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                          <ul class="navbar-nav ">
+                      <div class="collapse navbar-collapse  justify-content-center " id="navbarNav">
+                          <ul class="navbar-nav my-5">
                               <li class="nav-item">
-                                  <a class="nav-link" href="{% url 'base' %}">Home</a>
+                                  <a class="nav-link" style="color: black;" href="{% url 'base' %}">Home</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                                  <a class="nav-link" style="color: black;" href="{% url 'about' %}">About Us</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="{% url 'actionplan' %}">Action plan</a>
+                                  <a class="nav-link" style="color: black;" href="{% url 'actionplan' %}">Action plan</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-item nav-link " href="{% url 'home' %}">Chat</a>
+                                <a class="nav-item nav-link " style="color: black;" href="https://wa.me//680676590">Chat</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="">Partnership</a>
+                                  <a class="nav-link" style="color: black;" href="">Partnership</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="{% url 'donation' %}">Donate</a>
+                                  <a class="nav-link" style="color: black;" href="{% url 'donation' %}">Donate</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="">Contact</a>
+                                  <a class="nav-link" style="color: black;" href="mailto:buhnyuyronald@gmail.com">Contact Us</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="">Feed</a>
+                                  <a class="nav-link" style="color: black;" href="">News</a>
                               </li>
                           </ul>
                       </div>
@@ -69,45 +69,34 @@
               </div>
           </div>
       </div><br><br>
-      <marquee behavior="" direction="right"><strong>
+      <br>
+      <marquee behavior="" direction="right" ><strong>
+        <br>
         <h5>Welcome to Abassakom Association Of Developement Unions</h5>
       </strong></marquee>
   </div>
 <br><br>
   <br>
-  <div class="" style="margin: auto; opacity: 70%; "><br>
-    <div class="container">
-      <div class="row">
-        <div class="col" >
-          <div class="col-md-12 text-center">
-            <h2 class="" style="color: yellow;"><b>Project At hand</b></h2>
-            {% for card in cards %}
-              <div class="card-fluid">
-                <img style="height: 25rem; width: 50rem; margin: auto;" src="{{ card.image.url }}" class="img-fluid " alt="{{ post.title }}">
-              
-                <div class="card-body">
-                  <marquee behavior="" direction="right">
-                    <div class="card-title">
-                      <div class="row">
-                        <div class="col-4 text-center">
-                          <h4 style="color:rgb(220, 98, 23);">{{ card.description}}</h4>
-                        </div>
-                      </div>
+    
+      <div class="container text-center">
+        {% for card in cards %}
+            <img  src="{{ card.image.url }}" style="width: 100%;height: 20rem;object-fit:unset;overflow: hidden;" class="img-thumbnail" alt="{{ post.title }}">     
+            <div class="card-body">
+              <marquee behavior="" direction="right">
+                <div class="card-title">
+                  <div class="row">
+                    <div class="col-4 text-center">
+                      <h4 style="color:rgb(220, 98, 23);">{{ card.description}}</h4>
                     </div>
-                  </marquee>  
-                  <div class="card-body">
-                    <h5 class="display2" style="color: black;">Proceed to make donations.. <a href="{% url 'donation' %}" style="text-decoration: none;">DONATE</a></h5>
                   </div>
                 </div>
+              </marquee>  
+              <div class="card-body">
+                <h5 class="display2" style="color: black;">Proceed to make donations.. <a href="{% url 'donation' %}" style="text-decoration: none;">DONATE</a></h5>
               </div>
-            {% endfor %}
-          </div>
-        </div>
+            </div>
+        {% endfor %}
       </div>
-
-    </div>
-  </div>
-
     <div class="header">
       <br><br><hr>
         <header>
@@ -117,9 +106,9 @@
                   {% for post in posts %}
                   <div class="col-md-3 mb-3">
                     <div class="card">
-                      <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                      <img src="{{ post.image.url }}" class="card-img-top img-thumbnail" alt="{{ post.title }}">
                       <div class="card-body">
-                        <h5 class="card-title text-center" style="color: black;">{{ post.title }}</h5>
+                        <h5 class="card-title text-center" style="color: rgb(229, 107, 7);">{{ post.title }}</h5>
                         <hr>
                         <p class="card-text">{{ post.description }}</p>
                       </div>
@@ -130,36 +119,38 @@
               </div>
         </header>
     </div>
-    <div class="footer ">
-        <footer class="footer ">
-          <footer class="bg-dark text-white py-3 ">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4">
-                  <h5><a style="text-decoration: none; color: yellow;" href="{% url 'about' %}">About</a></h5>
-                  <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-                    This Association is opened to affiliating to other Associations with the same objectives when needs arises.ABADU seeks financial or material assistance when needs arises from government and non_governmental organisations within and outside cameoon to facilitate its developemental projects.
-                    ABADU has its head office at
-                  </p>
-                </div>
-                <div class="col-md-4">
-                    
-                </div>
-                <div class="col-md-4">
+    <footer>
+      <footer class="bg-dark text-white py-3 ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+
+                <div class="col active ripple bounce" id="first-block">
+                  <h1 class="" style="color:rgb(18, 215, 205);">About us</h1>
+                  <p style="position: relative; z-index: 1;">ABADU (ABASSAKOM DEVELOPMENT UNION) is a political, secular, non-confessional organization with the following objectives:</p>
+                
+                      <p>To foster the socio-economic and cultural development of Fundong sub-division.</p>
+                      <p>To cooperate with the administration in promoting all initiatives that are legally recognized for the development of Fundong sub-division.</p>
+
+              </div>
+              </div>
+              <div class="col-md-6">
+                  
+                  <h5><a style="text-decoration: none; color: rgb(18, 215, 205);" href="{% url 'about' %}">About</a></h5>
+                  <br><p>To educate Abassakom masses in collaboration with the village development union on all socio-cultural and economic practices that are likely to improve the standards of living of Abassakom people.</p><br>
                   <h5>Contact Us</h5>
                   <p>Email: info@abadu.com</p>
-                  <p>Phone: + (237) 6-51-21-10-00</p>
-                  <p>Address: 123 corners, BAMENDA, BAMBILI</p>
-                  <button  class="btn btn-button bg-danger" style="border-radius: 3rem;"><a style="text-decoration: none; color:white;" href="{% url 'signin' %}"> Admin SignIn</a></button>
-                </div>
+                  <p><a style="text-decoration: none" href="tel:+237680676590">Call US</a></p>
+                  <button  class="btn btn-button bg-info" style="border-radius: 3rem;"><a style="text-decoration: none; color:white;" href="{% url 'signin' %}"> Admin SignIn</a></button>
+
+                  
               </div>
-              <div class="row mt-3">
-                <div class="col-md-12 text-center">
-                  <p>&copy; 2023 ABADU. All rights reserved.</p>
-                </div>
+              <div class="col-md-12 text-center">
+                <p>&copy; 2023 ABADU. All rights reserved.</p>
               </div>
             </div>
-          </footer>
+          </div>
+        </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

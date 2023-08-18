@@ -17,10 +17,6 @@ urlpatterns = [
     path('update/<int:pk>/', views.updategallery, name='updategallery'),
     path('updateevent/<int:pk>/', views.update_event, name='updateevent'),
     path('donation/',views.donationsite,name='donation'), 
-    path('chatroom',views.HomePage,name='home'),
-    path('<str:room_name>/<str:username>/',views.room,name='room'),
-    path('available_rooms/',views.available_rooms,name='available_rooms'),
-    path('del_all_rooms',views.del_all_rooms,name='del_all_rooms'),
     path('about/',views.about,name='about'),
     path('action/',views.actionplan,name='actionplan')
 ]

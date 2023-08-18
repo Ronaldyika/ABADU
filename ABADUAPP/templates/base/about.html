@@ -13,19 +13,6 @@
         animation: rippleAnimation ease-in 1s;
     }
 
-    @keyframes rippleAnimation {
-        0% {
-            opacity: 1;
-            width: 0px;
-            height: 0px;
-        }
-
-        100% {
-            opacity: 0.5;
-            width: 50rem;
-            height: 50rem;
-        }
-    }
 
     .bounce {
         animation: bounceAnimation ease-out 0.3s;
@@ -54,8 +41,7 @@
     }
 
     #first-block {
-        opacity: 0;
-        color: transparent;
+
     }
 
     #first-block.animated {
@@ -67,7 +53,7 @@
 <div class="container"><br><br><br><br><br>
     <div class="row">
         <div class="col-md-6 active ripple bounce" id="first-block">
-            <h1 class="" style="color: yellow;">About us</h1>
+            <h1 class="" style="color:rgb(18, 215, 205);">About us</h1>
             <p style="position: relative; z-index: 1;">ABADU (ABASSAKOM DEVELOPMENT UNION) is a political, secular, non-confessional organization with the following objectives:</p>
             <ol style="position: relative; z-index: 1;">
                 <li>To foster the socio-economic and cultural development of Fundong sub-division.</li>
@@ -85,7 +71,7 @@
             <p>ABADU has its head office at Fundong town which is the headquarters of both Fundong sub-division and BOYO Division. The area of jurisdiction of ABADU is Fundong sub-division also referred to as Home zone and her external branches all over the Republic of Cameroon and abroad provided that her developmental projects shall all be based at the Home zone area (Abassakom).</p>
         </div>
     </div><br><br>
-    <button style=" border-radius: 3rem;" class="btn btn-danger btn-button"><a style="text-decoration: none;color: white;" href="{% url 'base' %}">Go Back To Home </a></button>
+    <button style=" border-radius: 3rem;" class="btn btn-info btn-button"><a style="text-decoration: none;color: white;" href="{% url 'base' %}">Go Back To Home </a></button>
 </div>
 
 <!-- Add Bootstrap JS for scrolling effect -->

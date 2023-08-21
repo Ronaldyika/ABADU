@@ -12,6 +12,10 @@
         }
         .navbar-nav .nav-link:hover {
             background-color: #f7f8f8;
+            border-radius: 2rem;
+        }
+        .container-fluid.bg-info.fixed-top {
+          padding-top: 1rem;
         }
     </style>
     <!-- css link  -->
@@ -23,7 +27,7 @@
 </head>
 <body>
     <header>
-        <div class="container-fluid bg-info ">
+        <div class="container-fluid bg-info fixed-top">
             <div class="row justify-content-center">
                 <div class="col">
                     <nav class="navbar navbar-expand-md navbar-dark text-black my-4">
@@ -80,9 +84,9 @@
                   <div class="row">
                     <div class="col-md-6">
 
-                      <div class="col active ripple bounce" id="first-block">
+                      <div class="col active ripple bounce" id="first-block" style="color: white;">
                         <h1 class="" style="color:rgb(18, 215, 205);">About us</h1>
-                        <p style="position: relative; z-index: 1;">ABADU (ABASSAKOM DEVELOPMENT UNION) is a political, secular, non-confessional organization with the following objectives:</p>
+                        <p style="position: relative; z-index: 1; color: white;">ABADU (ABASSAKOM DEVELOPMENT UNION) is a political, secular, non-confessional organization with the following objectives:</p>
                       
                             <p>To foster the socio-economic and cultural development of Fundong sub-division.</p>
                             <p>To cooperate with the administration in promoting all initiatives that are legally recognized for the development of Fundong sub-division.</p>
@@ -92,10 +96,10 @@
                     <div class="col-md-6">
                         
                         <h5><a style="text-decoration: none; color: rgb(18, 215, 205);" href="{% url 'about' %}">About</a></h5>
-                        <br><p>To educate Abassakom masses in collaboration with the village development union on all socio-cultural and economic practices that are likely to improve the standards of living of Abassakom people.</p><br>
+                        <br><p >To educate Abassakom masses in collaboration with the village development union on all socio-cultural and economic practices that are likely to improve the standards of living of Abassakom people.</p><br>
                         <h5>Contact Us</h5>
                         <p>Email: info@abadu.com</p>
-                        <p>Phone: + (237) 6-51-21-10-00</p>
+                        <p><a style="text-decoration: none" href="tel:+237680676590">Call US</a></p>
                         <button  class="btn btn-button bg-info" style="border-radius: 3rem;"><a style="text-decoration: none; color:white;" href="{% url 'signin' %}"> Admin SignIn</a></button>
   
                         

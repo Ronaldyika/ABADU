@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import blogpost,Gallery
-from django.contrib import messages
+
 
 # Create your views here.
 def index(request):
@@ -65,7 +65,7 @@ def adminblog(request):
             image = form.cleaned_data['image']
             gallery = Gallery(title=title, description=description, image=image)
             gallery.save()
-            return redirect('admingallery')  # Redirect to the gallery page after successful form submission
+            return redirect('admingallery') 
     else:
         form = Galleryform()
     return render(request, 'Admin/login/blog.html', {'form': form})

@@ -1,0 +1,172 @@
+{% extends 'nav_footer.html' %}
+
+{% block title %}Landing page{% endblock %}
+
+{% block content %}
+{% load static %}
+<br><br>
+<section>
+    <br>
+    <div class="what-we-do big-padding container-fluid">
+        <div class="container">
+            <div class="section-title row">
+                <h2>About Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 my-4">
+                    <div class="card">
+                        <div class="card-title bg-info text-center">
+                       <i class="bi fs-1 text-primary bi-house-door"></i>
+                        </div>
+                        <div class="card-body">
+                            <strong>
+                                ABADU (ABASSAKOM DEVELOPMENT UNION) is a political, secular,organization with the following objectives: 
+                            </strong><hr>
+                                <p>
+                                    -To foster the socio-economic and cultural development of Fundong sub-division.
+                                </p>
+                                <p>
+                                    -To cooperate with the administration in promoting all initiatives that are legally recognized for the development of Fundong sub-division.
+                                </p>
+                                <p>
+                                    -To provide a forum for the come-together of all schools of thoughts of Abassakom in Fundong sub-division.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 my-4">
+                    <div class="card">
+                        <div class="card-title bg-info text-center ">
+                            <i class="bi text-primary fs-1 bi-egg-fried">
+                            </i>
+                        </div>
+                        <div class="card-body">
+                            
+                            <hr>
+                                <p>
+                                    -To act as an umbrella organization over all village development unions with the acronym VDUs within her area of jurisdiction.
+                                </p>
+                                <p>
+                                    -The Association is open to affiliating to other Associations with the same objectives when needs arise. ABADU seeks financial or material assistance when needs
+                                </p>
+                                <p>
+                                    arise from government and non-governmental organizations within and outside Cameroon to facilitate its developmental projects.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+           <!-- ******************** OUR Team Starts Here ******************* -->
+
+    <section class="container-fluid causes bg-gray">
+        <div class="container">
+            <div class="section-title row">
+            <p>Learn more about our</p>
+            <h2>Team</h2>
+        </div>
+        <div class="cuses-row row">
+            <div class="col-md-4">
+                <div class="causen-ccover">
+                    
+                
+                <div class="caus-img">
+                    <img src="{% static 'assets/images/causes/c1.jpg' %}" alt="">
+                </div>
+                <div class="caus-info row no-margin">
+                    <span class="left-info col-6">
+                        RAISED: $764
+                    </span>
+                </div>
+                <div class="caus-detail">
+                    <h4 class="display-5"><b>Mr Peter</b></h4>
+                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                </div>
+                
+                <div class="text-center">
+                    <button class="btn btn-info"><i class="fas fa-hand-holding-usd"></i> Donate</button>
+                </div>
+
+            </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="causen-ccover">
+                    
+                
+                <div class="caus-img">
+                    <img src="{% static 'assets/images/causes/c2.jpg' %}" alt="">
+                </div>
+                <div class="caus-info row no-margin">
+                    <span class="left-info col-6">
+                        RAISED: $764
+                    </span>
+                </div>
+                <div class="caus-detail">
+                    <h4>Mr James</h4>
+                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                </div>
+                
+                <div class="text-center">
+                    <button class="btn btn-info"><i class="fas fa-hand-holding-usd"></i> Donate</button>
+                </div>
+
+            </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="causen-ccover">
+                    
+                
+                <div class="caus-img">
+                    <img src="{% static 'assets/images/causes/c3.jpg' %}" alt="">
+                </div>
+                <div class="caus-info row no-margin">
+                    <span class="left-info col-6">
+                        RAISED: $764
+                    </span>
+                </div>
+                <div class="caus-detail">
+                    <h4>Mr Francis</h4>
+                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                </div>
+                
+                <div class="text-center">
+                    <button class="btn btn-info"><i class="fas fa-hand-holding-usd">Donate</i> </button>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+        </div>
+     </section> 
+           <!-- ******************** About US Starts Here ******************* -->
+
+    <div class="about-us">
+        <div class="container">
+            <div class="session-title">
+                <p>Action Plan</p>
+            </div>
+            <div class="about-row row">
+                <div class="col-md-8">
+                    <div class="abut-detail">
+                         <h4>EDUCATION & PROFESSIONAL DEVELOPMENT</h4>
+                        <p>
+                            A large number of Abassakom children lack the basic needs required for a successful learning experience at all levels of education. The lack of financial resources prevents some of our most talented young men and women from pursuing higher education and other advanced professional opportunities It is also evident that schools in remote rural communities are mostly underserved and understaffed, lack the infrastructure and basic material needed for an effective and rewarding teaching/learning process.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'assets/images/about_img.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

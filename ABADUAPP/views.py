@@ -1,48 +1,29 @@
 from django.shortcuts import render,redirect,get_object_or_404
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+from .forms import UserRegistrationForm,Galleryform,Blogform
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import blogpost,Message,Gallery,Admininfo,Room
-from .forms import Galleryform,Blogform
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login,authenticate
+from .models import blogpost,Gallery
 from django.contrib import messages
-from django.contrib.auth.models import User
+
 # Create your views here.
-
 def index(request):
-    return render(request,'main/index.html')
+    return render(request,'index.html')
 
-def registeradmin(request):
+
+def RegisterUser(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        password1 = request.POST['password1']
-        if password == password1:
-            try:
-                user = Admininfo.objects.create_user(username=username, email=email, password=password)
-                user.save()
-                messages.success(request, 'Your account has been created successfully!')
-                return redirect('signin')
-            except:
-                messages.error(request, 'An error occurred while creating your account. Please try again.')
-        else:
-            messages.error(request, 'Passwords do not match. Please try again.')
-    return render(request, 'adminsite/register.html')
-
-
-def signinadmin(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('admingallery')
-        else:
-            messages.error(request, 'Invalid Username or password')
-    return render(request, 'adminsite/login.html')
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print("User saved")
+            return redirect('login')
+    else:
+        form = UserRegistrationForm()
+    
+    return render(request, 'Admin/login/register.html', {'form': form})
 
 def customergallery(request):
     cards = blogpost.objects.all()
@@ -52,8 +33,18 @@ def customergallery(request):
         'cards':cards
     }
 
-    return render(request,'customer/gallery.html',context)
+    return render(request,'Users/gallery.html',context)
 
+def upcoming(request):
+    cards = blogpost.objects.all()
+
+    context = {
+        'cards':cards
+    }
+
+    return render(request,'mainblog.html',context)
+
+@login_required()
 def admingallery(request):
     cards = blogpost.objects.all()
     posts = Gallery.objects.all()
@@ -62,8 +53,9 @@ def admingallery(request):
         'cards':cards
     }
     
-    return render(request, 'adminsite/gallery.html', context)
+    return render(request, 'Admin/login/gallery.html', context)
 
+@login_required()
 def adminblog(request):
     if request.method == 'POST':
         form = Galleryform(request.POST, request.FILES)
@@ -76,8 +68,10 @@ def adminblog(request):
             return redirect('admingallery')  # Redirect to the gallery page after successful form submission
     else:
         form = Galleryform()
-    return render(request, 'adminsite/blog.html', {'form': form})
+    return render(request, 'Admin/login/blog.html', {'form': form})
 
+
+@login_required()
 def deletegallery(request,pk):
 
     item = Gallery.objects.get(pk=pk)
@@ -85,7 +79,9 @@ def deletegallery(request,pk):
 
     return redirect('admingallery')
 
+@login_required()
 def updategallery(request,pk):
+
     item = get_object_or_404(Gallery, pk=pk)
     if request.method == 'POST':
         form = Galleryform(request.POST, request.FILES, instance=item)
@@ -94,9 +90,10 @@ def updategallery(request,pk):
             return redirect('admingallery')
     else:
         form = Galleryform(instance=item)
-    return render(request, 'adminsite/blog.html', {'form': form})
+    return render(request, 'Admin/login/blog.html', {'form': form})
 
 
+@login_required()
 def delete_event(request,pk):
 
     item = blogpost.objects.get(pk=pk)
@@ -105,28 +102,30 @@ def delete_event(request,pk):
     return redirect('admingallery')
 
 
-def update_event(request,pk):
-    item = get_object_or_404(blogpost,pk=pk)
+@login_required()
+def update_event(request, pk):
+    item = get_object_or_404(blogpost, pk=pk)
     if request.method == 'POST':
         form = Blogform(request.POST, request.FILES, instance=item)
-        
+
         if form.is_valid():
             form.save()
             return redirect('admingallery')
     else:
         form = Blogform(instance=item)
-    return render(request, 'adminsite/blog.html', {'form': form})
+    return render(request, 'Admin/login/blog.html', {'form': form})
 
 
 def donationsite(request):
     event = blogpost.objects.all()
     if event.exists():
-        return render(request,'base/donation.html')
+        return render(request,'donations.html')
 
     else:
 
-        return redirect('base')
+        return redirect('index')
 
+@login_required()
 def create_event(request):
     if request.method == 'POST':
         form = Blogform(request.POST, request.FILES)
@@ -138,28 +137,10 @@ def create_event(request):
             return redirect('admingallery') 
     else:
         form = blogpost()
-    return render(request, 'adminsite/blog.html', {'form': form})
-
-#this section deals with the chat section
-
-def HomePage(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        room = request.POST['room']
-
-        try:
-            get_room = Room.objects.get(room_name=room)
-            return redirect('room', room_name=room, username=username)
-        
-        except Room.DoesNotExist:
-            new_room = Room(room_name = room)
-            new_room.save()
-            return redirect('room',room_name=room,username=username)    
-    return render(request, 'chat/index.html')
-
+    return render(request, 'Admin/login/blog.html', {'form': form})
 
 def about(request):
-    return render(request,'base/about.html')
+    return render(request,'about.html')
 
 def actionplan(request):
-    return render(request,'action.html')
+    return render(request,'actionplan.html')

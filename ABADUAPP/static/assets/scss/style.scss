@@ -1,0 +1,261 @@
+/* =======================================================================
+Template Name: Youtubers
+Author:  SmartEye Technologies
+Author URI: www.smarteyeapps.com
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for Youtubers
+======================================================================= */
+
+/* ===================================== Import Variables ================================== */
+@import 'variable';
+/* ===================================== Basic CSS ==================================== */
+@import 'base/basic_setup';
+
+/* ===================================== Basic CSS ==================================== */
+@import 'base/bootstrap';
+
+
+
+
+.max-250{
+    max-width: 250px;
+}
+
+/* ===================================== Slider CSS ================================== */
+.slider-detail {
+  padding-top: 125px; }
+  @media screen and (max-width: 767px) {
+    .slider-detail {
+      padding-top: 100px; } }
+  .slider-detail .carousel-caption {
+    text-align: left;
+    bottom: 110px; }
+    .slider-detail .carousel-caption h5 {
+      font-size: 44px;
+      margin-left: -40px;
+      text-align: center; }
+    .slider-detail .carousel-caption p {
+      margin-left: -40px;
+      font-weight: 600;
+      margin-top: 40px;
+      font-size: 19px;
+      text-align: center; }
+  .slider-detail .vbh {
+    margin-left: -40px;
+    text-align: center; }
+    .slider-detail .vbh .btn {
+      padding: 10px;
+      margin-top: 40px;
+      font-weight: 600;
+      font-size: 18px;
+      margin: auto;
+      margin-top: 40px; }
+  .slider-detail .vdg-cur {
+    color: #FFF; }
+
+
+
+.about-us{
+	@include big-padding();
+	
+	.diag-ro{
+		margin: 0px;
+		margin-top: 20px;
+		h4{
+			margin-bottom: 20px;
+		}
+		.about-diag{
+			display: flex;
+			flex:1;
+			padding: 10px;
+			margin: auto;
+			.icon{
+				margin: auto;
+				padding: 15px 20px;
+				i{
+					font-size: 1.8rem;
+					color: #CCC;
+				}
+			}
+			.tex{
+				flex-grow:1;
+				h5{
+					font-weight: 600;
+					color: $primary;
+				}
+				p{
+					text-transform: uppercase;
+					font-size: .8rem;
+
+				}
+
+			}
+		}
+	}
+	.abut-detail{
+		h4{
+			margin-bottom: 20px;
+
+		}
+		p{
+			text-indent: 20px;
+			line-height: 28px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+
+
+/* =================== Causes Style Starts Here =================== */
+
+.causes{
+	@include big-padding();
+	.cuses-row{
+		.causen-ccover{
+			background-color: #FFF;
+			@include shado-1();
+			padding: 30px 15px;
+			margin-bottom: 20px;
+		}
+		.caus-img{
+			text-align: center;
+			img{
+				width: 120px;
+				border-radius: 50%;
+				border:5px solid $primary;
+				@include shado-1();
+				margin-bottom: 20px;
+			}
+		}
+		.caus-info{
+			.left-info{
+				float: left;
+				font-weight: 600;
+				font-size: .8rem;
+			}
+			.rit-info{
+				float: right;
+				font-weight: 600;
+				font-size: .8rem;
+			}
+		}
+		.caus-detail{
+			text-align: center;
+			margin-top: 20px;
+			h4{
+				font-size: 1.2rem;
+			}
+		}
+		.donat-btn{
+			margin-top: 20px;
+			text-align: center;
+			.btn{
+				width: 60%;
+				background-color: $primary;
+				border: #f78d15;
+				text-transform: uppercase;
+				font-weight: 600;
+				i{
+					margin-right: 10px;
+				}
+			}
+			text-align: center;
+		}
+	}
+}
+
+
+footer{
+   
+    .inner{
+        background-color: rgba(0,0,0,0.7);
+        @include big-padding();
+        color: #ccc;
+        font-size: .9rem;
+        h4{
+            color: #FFF;
+           
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        .foot-about{
+            p{
+                margin-bottom: 30px;
+            }
+        }
+        .foot-post{
+            .post-row{
+                display: flex;
+                margin-bottom: 10px;
+                .image{
+                     
+                    img{
+                       width: 120px;
+                    }
+                }
+                .detail{
+                    flex-grow: 1;
+                    padding-left: 5px;
+                    
+                    p{
+                        font-size: .8rem;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+        .foot-services{
+            ul{
+                li{
+                    padding: 5px;
+                    font-size: .95rem;
+                    a{
+                        color: #ccc;
+                    }
+                }
+            }
+        }
+        .foot-news{
+            p{
+               margin-bottom: 20px; 
+            }
+            .input-group{
+                border-radius: 0px;
+                input{
+                    border-radius: 0px;
+                }
+                .input-group-append{
+                    border-radius: 0px;
+                    background-color: #FFF;
+                }
+            }
+            ul{
+                li{
+                    float: left;
+                    padding: 10px;
+                    i{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copy{
+        padding: 20px;
+        background-color: #000000;
+        color: #FFF;
+    a{
+        color: #FFF;
+    }
+    span{
+        float: right;
+        i{
+            margin-right: 20px;
+        }
+    }
+}

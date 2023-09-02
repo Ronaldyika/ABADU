@@ -1,0 +1,40 @@
+{% extends 'nav_footer.html' %}
+{% block title %}LoginAs Admin{% endblock %}
+
+
+{% block content %}
+<br>
+
+<div class="container" id="maincontent">
+    <div class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+    
+            <div class="label"><label for="username">Username</label></div>
+            <div class="input-group">
+                {{ form.username }}
+            </div>
+            <div class="label"><label for="password">Password</label></div>
+            <div class="input-group">
+                {{ form.password }}
+            </div><br><br>
+            <div class="button">
+                <button class="btn btn-info " type="submit">SignIn</button>
+                <button class="btn"><a href="">Reset password</a></button>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    input[type=text],
+    input[type=password]{
+        width: 40%;
+        border-radius: 2rem;
+        height: 6vh;
+    }
+    #maincontent{
+        margin-top:20%;
+        margin-left: 35%;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'nav_footer.html' %}
+
+{% block title %} UploadBlog {% endblock %}
+
+{% block content %}
+<br>
+
+<div class="container" id="maincontent">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="form-container p-4">
+                <form method="post"  class="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" name="title" id="title" aria-describedby="title" placeholder="Enter block title">
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea required="true" cols="10" rows="4"  name="description" id="description" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group form-img">
+                        <label for="image">Upload Image</label>
+                        <input type="file" name="image"  id="image" class="form-control-file">
+                    </div>
+                    <button class="btn btn-button" style="background-color: black;"><a href="{% url 'admingallery' %}" style="text-decoration: none; color: white;">Back</a></button>
+                    <button type="submit" class="btn btn-danger float-right">Submit</button>
+                </form><br>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #maincontent{
+        margin-top: 10%;
+    }
+</style>
+
+{% endblock %}

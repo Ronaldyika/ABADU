@@ -1,0 +1,51 @@
+{% extends 'nav_footer.html' %}
+{% block title %}Register user{% endblock %}
+
+
+{% block content %}
+
+<div class="contianer"  id="maincontent">
+    <div class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+    
+            <div class="label"><label for="username">Username</label></div>
+            <div class="input-group">
+                {{ form.username }}
+            </div>
+            <div class="label"><label for="email">Email</label></div>
+            <div class="input-group">
+                {{ form.email }}
+            </div>
+            <div class="label"><label for="password1">Password</label></div>
+            <div class="input-group">
+                {{ form.password1 }}
+            </div>
+            <div class="label"><label for="password2">Confirm Password</label></div>
+            <div class="input-group">
+                {{ form.password2 }}
+            </div><br><br>
+            <div class="button">
+                <button class="btn btn-info " type="submit">Signup</button>
+            </div>
+        </form>
+        <div class="container">
+            Already a User? <a href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+    
+</div>
+<style>
+    input[type='text'],
+    input[type='email'],
+    input[type='password']{
+        width: 40%;
+        border-radius: 2rem;
+        height: 6vh;
+    }
+    #maincontent{
+        margin-top: 15%;
+        margin-left: 30%;
+    }
+</style>
+{% endblock %}

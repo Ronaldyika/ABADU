@@ -1,0 +1,94 @@
+{% extends 'nav_footer.html' %}
+{% block title %} gallery{% endblock %}
+<br>
+
+{% block content %}
+
+<div class=""><br>
+    <div class="container" id="maincontent">
+      <div class="row">
+        <div class="col" >
+          <div class="col text-center">
+            <h2 class="" style="color: rgb(217, 118, 6);"><b>Project At hand</b></h2>
+            {% for card in cards %}
+              <div class="card-fluid">
+                <img style="width: 100%;height: 20rem;object-fit:unset;overflow: hidden;"" class="img-thumbnail" src="{{ card.image.url }}" class="img-fluid " alt="{{ post.title }}">
+                <div class="card-body">
+                  <marquee behavior="" direction="right">
+                    <div class="card-title">
+                      <div class="row">
+                        <div class="col-4 text-center">
+                          <h4 style="color: rgb(5, 5, 5);">{{ card.description}}</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </marquee>
+                  <div class="row text-center">
+                    <div class="col-6">
+                      <button class="btn-button btn  " style="background-color: black;"><a href="{% url 'delete_event' card.pk %}" style="text-decoration: none;  color: white">Delete</a></button>
+                    </div>
+                    <div class="col-6">
+                      <button class="btn-button btn bg-info"><a href="{% url 'updateevent' card.pk %}" style="text-decoration: none;  color: white;">Update</a></button>
+                    </div>
+                  </div>  
+                  <div class="card-body">
+                    <h5 class="display2" >Proceed to make donations.. <a href="{% url 'donation' %}" style="text-decoration: none;">DONATE</a></h5>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            <div class="container mx-5">
+              <div class="col-6 mx-5 text-center">
+                <button class=" btn-button btn btn-info  float-right" ><a href="{% url 'create_event' %}" style="text-decoration: none;color: white;">Create Event</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="header">
+      <br><br><hr>
+        <header>
+            <div class="container">
+              <h3 class=" text-center "><b>Completed Tasks</b></h3>
+                <div class="row text-center">
+                  {% for post in posts %}
+                  <div class="col-md-4 mb-3">
+                    <div class="card">
+                      <img src="{{ post.image.url }}" style="height: 300px; object-fit: cover;" class="card-img-top" alt="{{ post.title }}">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(217, 147, 7)">{{ post.title }}</h5>
+                        <hr>
+                        <p class="card-text" >{{ post.description }}</p>
+                        <div class="row text-center">
+                          <div class="col-6">
+                            <button class="btn-button btn  btn-block" style="background-color: black;"><a href="{% url 'deletegallery' post.pk %}" style="text-decoration:none; color: white;">Delete</a></button>
+                          </div>
+                          <div class="col-6">
+                            <button class="btn-button btn bg-info btn-block"><a href="{% url 'updategallery' post.pk %}" style="text-decoration: none; color: white;">Update</a></button>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+                <div class="container text-center mx-5">
+                  <div class="col-6 mx-5">
+                    <button class="btn-button btn btn-info  float-right"><a href="{% url 'adminblog' %}" style="text-decoration: none; color: white;">Add To Gallery</a></button>
+                  </div>
+                </div>
+              </div><br><br>
+        </header>
+    </div>
+
+    <style>
+        #maincontent{
+            margin-top: 10%;
+        }
+    </style>
+
+{% endblock %}
